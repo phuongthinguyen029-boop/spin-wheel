@@ -48,9 +48,14 @@
             transition: background 0.3s, box-shadow 0.3s;
             margin: 10px;
         }
-        button:hover {
+        button:hover:not(:disabled) {
             background: #b71c1c; /* Đỏ đậm hơn khi hover */
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3), 0 0 20px rgba(255, 255, 255, 1); /* Vệt tuyết mạnh hơn khi hover */
+        }
+        button:disabled {
+            background: #ccc; /* Màu xám khi disabled */
+            cursor: not-allowed;
+            box-shadow: none;
         }
         #result {
             margin-top: 20px;
@@ -80,7 +85,7 @@
     <div id="wheel">
         <div id="pointer">▲</div>  <!-- Mũi tên chỉ lên từ dưới -->
     </div>
-    <button onclick="spinWheel()">Quay Ngay!</button>
+    <button id="spinBtn" onclick="spinWheel()">Quay Ngay!</button>
     <div id="result"></div>
     <button id="actionBtn" onclick="performAction()">Thực Hiện Ngay</button>
     
@@ -178,6 +183,10 @@
                 document.getElementById('result').textContent = `🎉 Chúc mừng! Bạn trúng ${segments[segmentIndex]}. Nhiệm vụ của bạn: ${tasks[segmentIndex]} 🎄`;
                 // Hiển thị nút "Thực Hiện Ngay"
                 document.getElementById('actionBtn').style.display = 'inline-block';
+                // Vô hiệu hóa nút quay để không quay lại
+                const spinBtn = document.getElementById('spinBtn');
+                spinBtn.disabled = true;
+                spinBtn.textContent = 'Đã Quay'; // Thay đổi text nút
                 canvas.style.transition = 'none'; // Reset transition
             }, 3000); // Thời gian quay 5 giây
         }
