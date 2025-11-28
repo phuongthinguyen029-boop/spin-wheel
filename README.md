@@ -180,7 +180,7 @@
                 const adjustedAngle = (finalAngle + 180) % 360;
                 const segmentIndex = Math.floor(adjustedAngle / (360 / segments.length));
                 // Hiển thị nhiệm vụ tương ứng với số trúng
-                document.getElementById('result').textContent = `🎉 Chúc mừng! Bạn trúng ${segments[segmentIndex]}. Nhiệm vụ của bạn: ${tasks[segmentIndex]} 🎄`;
+                document.getElementById('result').textContent = `🎉 Chúc mừng! . Nhiệm vụ của bạn: ${tasks[segmentIndex]} 🎄`;
                 // Hiển thị nút "Thực Hiện Ngay"
                 document.getElementById('actionBtn').style.display = 'inline-block';
                 // Vô hiệu hóa nút quay để không quay lại
