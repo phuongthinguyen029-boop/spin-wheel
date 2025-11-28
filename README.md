@@ -179,12 +179,12 @@
                 // Hiển thị nút "Thực Hiện Ngay"
                 document.getElementById('actionBtn').style.display = 'inline-block';
                 canvas.style.transition = 'none'; // Reset transition
-            }, 3000); // Thời gian quay 3 giây
+            }, 3000); // Thời gian quay 5 giây
         }
         
         // Hàm thực hiện hành động (đóng trang)
         function performAction() {
-            window.close(); // Đóng tab/trang hiện tại, quay về Facebook nếu mở từ đó
+            window.close(); // Đóng tab/trang hiện tại
         }
     </script>
 </body>
