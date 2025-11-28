@@ -193,7 +193,7 @@
         
         // Hàm thực hiện hành động (đóng trang)
         function performAction() {
-            window.close(); // Đóng tab/trang hiện tại
+            window.close(); // Đóng link/trang hiện tại
         }
     </script>
 </body>
